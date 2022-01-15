@@ -2,12 +2,9 @@
 //AMEEN BASITH (822440678)
 
 #include <iostream>
-#include <utility>
 #include <vector>
 #include <string>
 #include <random>
-#include <cstdlib>
-#include <algorithm>
 #include <stack>
 
 #define RIGHT(y) y + 2
@@ -72,7 +69,7 @@ int main(int argc, char *argv[]) {
 }
 
 void printMaze() { //last step - printing the maze!
-    for (int i = 0; i < length; i++) { //output is weird for larger values (include in comments)
+    for (int i = 0; i < length; i++) { //output is off for larger values (issue found only in windows)
         for (int j = 0; j < length; j++) {
             std::cout << grid[i][j].value << " ";
             if (j == length - 1)
@@ -164,7 +161,7 @@ Cell *chooseNeighbor(Cell *pType) {
         int randVal = randomNumGenerator(pType->neighbor.size() - 1);
         auto randNeighbor = pType->neighbor[randVal];
         if (!randNeighbor->visited) {
-//            std::cout << "random neighbor below" << std::endl; //this line and the previous line are included for testing purposes
+//            std::cout << "random neighbor below" << std::endl; //this line and the following line are included for testing purposes
 //            std::cout << randNeighbor->row << " " << randNeighbor->column << std::endl;
             return randNeighbor;
         } else {
