@@ -1,6 +1,3 @@
-//STUDENT CODE
-//AMEEN BASITH (822440678)
-
 #include <iostream>
 #include <vector>
 #include <string>
